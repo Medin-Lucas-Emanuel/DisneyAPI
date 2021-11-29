@@ -15,7 +15,7 @@ namespace DisneyAPI.Models
         public string Titulo { get; set; }
         [Required]
         public DateTime FechaCreacion { get; set; }
-        [Required]
+        [Required, Range(1,5)]
         public int calificacion { get; set; }
         public List<PersonajeModel> Personajes { get; set; }
         public List<GeneroModel> Generos { get; set; }

@@ -10,7 +10,10 @@ namespace DisneyAPI.Models
     {
         public int Id { get; set; }
         [Required]
+        [MaxLength(50)]
         public string Nombre { get; set; }
+
+        [Required]
         public string ImgUrl { get; set; }
         public List<PeliculaModel> Peliculas { get; set; }
     }
