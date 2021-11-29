@@ -56,10 +56,16 @@ namespace DisneyAPI.Controllers
         {
         }
 
-        // DELETE api/<PersonajeController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> DeletePersonaje([FromRoute] int id)
         {
+            var personaje = new PersonajeModel() { Id = id };
+
+            _context.Personajes.Remove(personaje);
+            await _context.SaveChangesAsync();
+
+            return Ok();
         }
     }
 }
